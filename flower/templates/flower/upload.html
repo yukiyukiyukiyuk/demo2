@@ -1,27 +1,38 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>flower SEACHER</title>
+    <title>Infection AI</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   </head>
 
   <body>
-    <h2>感染症診断アプリ</h2>
-    <h1>Infection AI Web</h1>
-    <p>
-      Infection AI Webは、入力された画像の感染症を診断するアプリです。
-      <br />
-      診断したい画像をアップロードしてみましょう。
-    </p>
-    <form
-      enctype="multipart/form-data"
-      action="{% url 'flower:upload' %}"
-      method="POST"
-    >
-      {% csrf_token %} {{form.as_p}}
-      <br />
-      <button type="submit">Upload</button>
-      <a href="{% url 'flower:showall' %}">過去の結果一覧を見る</a>
-    </form>
+    <aside id="mainimg">main page</aside>
+
+    <header>
+      <h1 id="logo"><a href="home.html"><img src="{% static 'images/logo.svg' %}" alt="Tissue Engineering"></a></h1>
+    </header>
+
+    <main>
+      <h2>感染症診断アプリ</h2>
+      <h1>Infection AI Web</h1>
+      <p>
+        Infection AI Webは、入力された画像の感染症を診断するアプリです。
+        <br />
+        診断したい画像をアップロードしてみましょう。
+      </p>
+      <form
+        enctype="multipart/form-data"
+        action="{% url 'flower:upload' %}"
+        method="POST"
+      >
+        {% csrf_token %} {{form.as_p}}
+        <br />
+        <button type="submit">Upload</button>
+        <a href="{% url 'flower:showall' %}">過去の結果一覧を見る</a>
+      </form>
+    </main>
   </body>
 </html>
