@@ -33,10 +33,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("flower/", include("flower.urls")),
     path('media/<path:path>', serve, {'document_root': settings.MEDIA_ROOT}),
-    path('static/<path:path>', serve, {'document_root': settings.STATICFILE_DIRS}),
+    path('static/<path:path>', serve, {'document_root': settings.STATICFILES_DIRS}),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILE_DIRS)
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATICFILES_DIRS)
 
 
