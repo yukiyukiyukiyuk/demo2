@@ -1,10 +1,21 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RESULT</title>
+    <meta charset="utf-8" />
+    <title>Infection AI</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   </head>
 
   <body>
+    <aside id="mainimg">main page</aside>
+
+    <header>
+      <h1 id="logo"><a href="home.html"><img src="{% static 'images/logo.svg' %}" alt="Tissue Engineering"></a></h1>
+    </header>
+
+    <main>
     <h1>過去の結果一覧</h1>
     <table>
       <thead>
@@ -58,5 +69,6 @@
     <br />
     <a href="{% url 'flower:upload' %}">Upload more</a>
     <br />
+  </main>
   </body>
 </html>
